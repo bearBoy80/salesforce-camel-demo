@@ -1,0 +1,66 @@
+server:
+  port: 8081
+camel:
+  springboot:
+    name: ServicesRest
+  component:
+    salesforce:
+#      notifyForFields: ALL
+#      notifyForOperationCreate: true
+#      notifyForOperationDelete: true
+#      notifyForOperationUndelete: true
+#      notifyForOperationUpdate: true
+#      sObjectQuery: SELECT Id, Name, Email, Phone FROM Contact
+       login-config:
+          client-id: xxxxxx
+          client-secret: xxxx
+          refresh-token: xxxxx
+          type: REFRESH_TOKEN
+management:
+  port: 8081
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+quickstart:
+  generateOrderPeriod: 10s
+  processOrderPeriod: 30s
+baeldung:
+  api:
+    path: '/camel'
+    downFileUrl: https://xxxxx.my.salesforce.com/services/data/v53.0/sobjects/ContentVersion/{id}/VersionData
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    logSlowSql: true
+
+    url: jdbc:mysql://xxxxxxxx:3306/salesforce_test?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: xxxxx
+    driverClassName: com.mysql.jdbc.Driver
+    druid:
+      salesforce:
+        initial-size: 1
+        max-active: 20
+        min-idle: 1
+        max-wait: 6000
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        #max-open-prepared-statements: 和上方属性一样
+        validation-query: "select 1 from dual"
+        validation-query-timeout: 10000
+        test-on-borrow: false
+        test-on-return: false
+        test-while-idle: true
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        max-evictable-idle-time-millis: 600000
+        filters: "stat,wall"
+        async-init: true
+salesforce:
+  topic: camelTestTopic
+logging:
+  level:
+    org:
+      apache:
+        camel: debug
