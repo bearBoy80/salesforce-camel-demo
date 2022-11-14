@@ -2,6 +2,7 @@
 
 不管是基于Topic 方式或者CDC数据获取都是通过Streaming API来实现.具体参考如下:
 ![具体参考如下](./asserts/stream%20api.png)
+
 [相关详细信息](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/event_comparison.htm)
 
 ## salesforce 基于Topic 方式
