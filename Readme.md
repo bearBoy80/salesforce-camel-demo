@@ -93,6 +93,3 @@ https://developer.salesforce.com/docs/atlas.en-us.228.0.object_reference.meta/ob
 
 ## 启动项目
 发送get请求:http://localhost:8081/camel/api/attachment,代码会自动下载salesforce 里面的ContentVersion存储的所有文件。
-
-
-## camel 关键类
