@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 
 /**
- * @author jt.gui
+ * @author bearboy
  */
 @Configuration
 public class ThreadPoolConfig {
